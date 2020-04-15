@@ -33,15 +33,15 @@ export default {
   ],
   external: ['react'],
   plugins: [
+    resolve({
+      preferBuiltins: false,
+      browser: true
+    }),
     clear({
       targets: ['dist']
     }),
     multiEntry(),
     peerDepsExternal(),
-    resolve({
-      preferBuiltins: false,
-      browser: true
-    }),
     commonjs(),
     babel({
       exclude: 'node_modules/**'
