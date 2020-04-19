@@ -1,15 +1,15 @@
 import babel from 'rollup-plugin-babel'
 import resolve from 'rollup-plugin-node-resolve'
-import commonjs from 'rollup-plugin-commonjs'
-import { terser } from 'rollup-plugin-terser'
-import peerDepsExternal from 'rollup-plugin-peer-deps-external'
+// import commonjs from 'rollup-plugin-commonjs'
+// import { terser } from 'rollup-plugin-terser'
+// import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import clear from 'rollup-plugin-clear'
 import { sizeSnapshot } from 'rollup-plugin-size-snapshot'
-import multiEntry from 'rollup-plugin-multi-entry'
+// import multiEntry from 'rollup-plugin-multi-entry'
 
 const dist = 'dist'
 const bundle = 'bundle'
-const production = !process.env.ROLLUP_WATCH
+// const production = !process.env.ROLLUP_WATCH
 
 export default {
   input: 'src/index.js',
@@ -26,33 +26,34 @@ export default {
       name: 'SecretDinoClaws',
       file: `${dist}/${bundle}.umd.js`,
       globals: {
-        react: 'React'
+        react: 'React',
+        'react/jsx-runtime': 'jsxRuntime'
       },
       format: 'umd'
     }
   ],
-  external: ['react'],
+  external: ['react', 'react/jsx-runtime'],
   plugins: [
     resolve({
-      preferBuiltins: false,
-      browser: true
+      preferBuiltins: false
+      // browser: true
     }),
     clear({
       targets: ['dist']
     }),
-    multiEntry(),
-    peerDepsExternal(),
-    commonjs(),
+    // multiEntry(),
+    // peerDepsExternal(),
+    // commonjs(),
     babel({
       exclude: 'node_modules/**'
     }),
     sizeSnapshot({
       snapshotPath: './.tmp/.size-snapshot.json'
-    }),
-    production &&
-      terser({
-        compress: true,
-        mangle: true
-      })
+    })
+    // production &&
+    //   terser({
+    //     compress: true,
+    //     mangle: true
+    //   })
   ]
 }

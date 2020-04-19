@@ -1,3 +1,3 @@
-import AudioPlayer from './AudioPlayer/index.jsx'
+import AudioPlayer from './AudioPlayer'
 
 export { AudioPlayer }
