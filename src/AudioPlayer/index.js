@@ -1,6 +1,6 @@
 import React from 'react'
 
-function AudioPlayer () {
+function AudioPlayer() {
   return (
     <div className="AudioPlayer">
       <h1>Audio Player</h1>

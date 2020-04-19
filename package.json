@@ -9,7 +9,7 @@
     "build": "rollup -c",
     "lint": "eslint 'src/**/*.js'",
     "lint:fix": "prettier-eslint --write $PWD/'src/**/*.js?(x)'",
-    "prettier": "prettier --check '**/*'",
+    "prettier": "prettier --check 'src/**/*'",
     "test": "npm run prettier && npm run lint"
   },
   "husky": {
