@@ -1,11 +1,8 @@
 import babel from 'rollup-plugin-babel'
 import resolve from 'rollup-plugin-node-resolve'
-// import commonjs from 'rollup-plugin-commonjs'
 // import { terser } from 'rollup-plugin-terser'
-// import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import clear from 'rollup-plugin-clear'
 import { sizeSnapshot } from 'rollup-plugin-size-snapshot'
-// import multiEntry from 'rollup-plugin-multi-entry'
 
 const dist = 'dist'
 const bundle = 'bundle'
@@ -27,23 +24,20 @@ export default {
       file: `${dist}/${bundle}.umd.js`,
       globals: {
         react: 'React',
-        'react/jsx-runtime': 'jsxRuntime'
+        'react/jsx-runtime': 'jsxRuntime',
+        'styled-components': 'styled'
       },
       format: 'umd'
     }
   ],
-  external: ['react', 'react/jsx-runtime'],
+  external: ['react', 'react/jsx-runtime', 'styled-components'],
   plugins: [
     resolve({
       preferBuiltins: false
-      // browser: true
     }),
     clear({
       targets: ['dist']
     }),
-    // multiEntry(),
-    // peerDepsExternal(),
-    // commonjs(),
     babel({
       exclude: 'node_modules/**'
     }),

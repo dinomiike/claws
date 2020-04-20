@@ -4,11 +4,10 @@ exports[`renders an AudioPlayer correctly 1`] = `
 <div
   className="AudioPlayer"
 >
-  <h1>
+  <h1
+    className="AudioPlayer__PlayerTitle-mlckz2-0 iWwKbv"
+  >
     Audio Player
   </h1>
-  <div>
-    Moo
-  </div>
 </div>
 `;

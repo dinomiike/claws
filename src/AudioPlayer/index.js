@@ -1,10 +1,14 @@
 import React from 'react'
+import styled from 'styled-components'
+
+const PlayerTitle = styled.h1`
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+`
 
 function AudioPlayer() {
   return (
     <div className="AudioPlayer">
-      <h1>Audio Player</h1>
-      <div>Moo</div>
+      <PlayerTitle>Audio Player</PlayerTitle>
     </div>
   )
 }
