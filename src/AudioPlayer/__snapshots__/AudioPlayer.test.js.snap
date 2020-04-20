@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders an AudioPlayer correctly 1`] = `
+<div
+  className="AudioPlayer"
+>
+  <h1>
+    Audio Player
+  </h1>
+  <div>
+    Moo
+  </div>
+</div>
+`;

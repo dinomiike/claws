@@ -4,3 +4,5 @@ node_modules
 .eslintignore
 .gitignore
 .prettierignore
+coverage
+*.snap
